@@ -2,7 +2,8 @@ import fs from "fs";
 import fetch from "node-fetch";
 import parser from "xml2json";
 
-const FEED_URL = "https://blog.codesigh.com/rss.xml";
+const FEED_URL_EN = "https://blog.codesigh.com/rss.xml";
+const FEED_URL_PL = "https://blog.codesigh.com/pl/rss.xml";
 const TAG_OPEN = `<!-- FEED-START -->`;
 const TAG_CLOSE = `<!-- FEED-END -->`;
 
@@ -11,8 +12,8 @@ interface LatestPostsProps {
     link: string;
 }
 
-const fetchArticles = async () => {
-  const articles = await fetch(FEED_URL);
+const fetchArticles = async (lang: string) => {
+  const articles = await fetch(lang === 'en' ? FEED_URL_EN : FEED_URL_PL);
   const articlesText = await articles.text();
   const articlesJSON = parser.toJson(articlesText);
   const latestPosts = JSON.parse(articlesJSON).rss.channel.item.slice(0, 5);
@@ -27,11 +28,18 @@ async function main() {
   const readmeContentChunkBreakBefore = readme.substring(0, indexBefore);
   const readmeContentChunkBreakAfter = readme.substring(indexAfter);
 
-  const posts = await fetchArticles();
+  const postsEn = await fetchArticles('en');
+  const postsPl = await fetchArticles('pl');
 
   const readmeNew = `
 ${readmeContentChunkBreakBefore}
-${posts}
+ENGLISH ARTICLES
+${postsEn}
+${readmeContentChunkBreakAfter}
+
+${readmeContentChunkBreakBefore}
+POLISH ARTICLES
+${postsPl}
 ${readmeContentChunkBreakAfter}
 `;
 
