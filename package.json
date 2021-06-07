@@ -1,0 +1,18 @@
+{
+  "name": "recent-blog-feed",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "repository": "https://github.com/ceboola/recent-blog-feed.git",
+  "author": "ceboola <pawelmizzz@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.6.1",
+    "xml2json": "^0.12.0"
+  },
+  "devDependencies": {
+    "@types/node-fetch": "^2.5.10",
+    "@types/xml2json": "^0.11.3",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  }
+}
