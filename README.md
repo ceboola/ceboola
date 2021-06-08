@@ -15,6 +15,6 @@ Nice to see you here
 - [Renovate z Gitlab CI/CD](https://blog.codesigh.com/pl/renovate-with-gitlab-ci/)
 - [VPS z K3S i integracja z Gitlabem](https://blog.codesigh.com/pl/vps-with-k3s-and-gitlab-integration/)
 - [Gitlab API na stronie Gatsby](https://blog.codesigh.com/pl/gitlab-api-on-gatsby-site/)
-- [Nowy swiat](https://blog.codesigh.com/pl/new-world/)
 - [Hello](https://blog.codesigh.com/pl/new-beginnings/)
+- [Nowy swiat](https://blog.codesigh.com/pl/new-world/)
 <!-- FEED-END -->
